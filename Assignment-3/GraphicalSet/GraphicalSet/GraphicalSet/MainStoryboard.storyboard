@@ -1,0 +1,510 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12E55" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="6u5-wQ-7Mh">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
+    </dependencies>
+    <scenes>
+        <!--Playing Card Game View Controller - Card Match-->
+        <scene sceneID="5">
+            <objects>
+                <viewController id="2" customClass="PlayingCardGameViewController" sceneMemberID="viewController">
+                    <view key="view" opaque="NO" contentMode="scaleToFill" id="3">
+                        <rect key="frame" x="0.0" y="20" width="320" height="499"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="000" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mQl-iX-WLt">
+                                <fontDescription key="fontDescription" name="Verdana-Bold" family="Verdana" pointSize="18"/>
+                                <color key="textColor" red="0.50196081399917603" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8mL-un-7pV">
+                                <attributedString key="attributedText">
+                                    <fragment content="Flip a card!">
+                                        <attributes>
+                                            <color key="NSColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                            <font key="NSFont" size="13" name="Helvetica"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nbL-cm-pDy">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <state key="normal" title="Restart">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="restartGame" destination="2" eventType="touchUpInside" id="SQW-LM-E3j"/>
+                                </connections>
+                            </button>
+                            <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ynp-7i-C8N">
+                                <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                <gestureRecognizers/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="5" minimumInteritemSpacing="5" id="6rv-fw-oNj">
+                                    <size key="itemSize" width="70" height="100"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="10" minY="10" maxX="10" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Card" id="nIz-QZ-jus" customClass="PlayingCardsCollectionViewCell">
+                                        <rect key="frame" x="10" y="10" width="70" height="100"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="70" height="100"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H61-Js-L2Q" customClass="PlayingCardView">
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                </view>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="H61-Js-L2Q" firstAttribute="bottom" secondItem="nIz-QZ-jus" secondAttribute="bottom" type="default" id="Gk9-ef-qa6"/>
+                                            <constraint firstItem="H61-Js-L2Q" firstAttribute="leading" secondItem="nIz-QZ-jus" secondAttribute="leading" type="default" id="KD3-TF-VNH"/>
+                                            <constraint firstItem="H61-Js-L2Q" firstAttribute="trailing" secondItem="nIz-QZ-jus" secondAttribute="trailing" type="default" id="QgP-oR-48i"/>
+                                            <constraint firstItem="H61-Js-L2Q" firstAttribute="top" secondItem="nIz-QZ-jus" secondAttribute="top" type="default" id="kqB-fz-O8y"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="playingCardView" destination="H61-Js-L2Q" id="n1L-99-bXi"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="2" id="r5k-16-YgT"/>
+                                    <outletCollection property="gestureRecognizers" destination="fk8-13-edK" appends="YES" id="hzW-H7-N3n"/>
+                                </connections>
+                            </collectionView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="SCORE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="alv-35-AQR">
+                                <fontDescription key="fontDescription" name="Verdana-Bold" family="Verdana" pointSize="10"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ynp-7i-C8N" firstAttribute="leading" secondItem="3" secondAttribute="leading" type="default" id="0H6-of-ocS"/>
+                            <constraint firstItem="alv-35-AQR" firstAttribute="top" secondItem="nbL-cm-pDy" secondAttribute="top" type="default" id="2vI-PO-Ev5"/>
+                            <constraint firstAttribute="bottom" secondItem="mQl-iX-WLt" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="7ZM-xh-izZ"/>
+                            <constraint firstItem="ynp-7i-C8N" firstAttribute="trailing" secondItem="3" secondAttribute="trailing" type="default" id="Cof-Kq-sEW"/>
+                            <constraint firstItem="alv-35-AQR" firstAttribute="centerX" secondItem="ynp-7i-C8N" secondAttribute="centerX" type="default" id="J00-fv-adw"/>
+                            <constraint firstItem="alv-35-AQR" firstAttribute="centerX" secondItem="8mL-un-7pV" secondAttribute="centerX" type="default" id="NgV-3v-0mb"/>
+                            <constraint firstItem="8mL-un-7pV" firstAttribute="top" secondItem="ynp-7i-C8N" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="Uha-u0-Ih3"/>
+                            <constraint firstItem="ynp-7i-C8N" firstAttribute="top" secondItem="3" secondAttribute="top" type="default" id="aBo-cX-usm"/>
+                            <constraint firstItem="mQl-iX-WLt" firstAttribute="baseline" secondItem="nbL-cm-pDy" secondAttribute="baseline" type="default" id="bD5-ee-dhK"/>
+                            <constraint firstItem="alv-35-AQR" firstAttribute="top" secondItem="8mL-un-7pV" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="kWL-i2-FLi"/>
+                            <constraint firstAttribute="trailing" secondItem="nbL-cm-pDy" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="mGG-ch-C85"/>
+                            <constraint firstItem="mQl-iX-WLt" firstAttribute="centerY" secondItem="nbL-cm-pDy" secondAttribute="centerY" type="default" id="mHc-Ut-lCZ"/>
+                            <constraint firstItem="mQl-iX-WLt" firstAttribute="centerX" secondItem="alv-35-AQR" secondAttribute="centerX" type="default" id="yuN-jh-RDX"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Card Match" image="tab-1.png" id="jbY-up-Cl3"/>
+                    <connections>
+                        <outlet property="cardCollectionView" destination="ynp-7i-C8N" id="kBI-86-xFm"/>
+                        <outlet property="messageLabel" destination="8mL-un-7pV" id="m2U-IV-pyU"/>
+                        <outlet property="scoreLabel" destination="mQl-iX-WLt" id="Am7-SR-VEU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="fk8-13-edK">
+                    <connections>
+                        <action selector="flipCard:" destination="2" id="H2L-ua-L7E"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="-92" y="-740"/>
+        </scene>
+        <!--Set Card Game View Controller - Set-->
+        <scene sceneID="lcF-Wr-jKH">
+            <objects>
+                <viewController id="DfJ-7b-TQ7" customClass="SetCardGameViewController" sceneMemberID="viewController">
+                    <view key="view" opaque="NO" contentMode="scaleToFill" id="Prv-xA-zIs">
+                        <rect key="frame" x="0.0" y="20" width="320" height="499"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="000" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xGB-Wk-ArX">
+                                <fontDescription key="fontDescription" name="Verdana-Bold" family="Verdana" pointSize="18"/>
+                                <color key="textColor" red="0.50196081399917603" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nj0-SW-O5G">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <state key="normal" title="Restart">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="restartGame" destination="DfJ-7b-TQ7" eventType="touchUpInside" id="QAG-iG-VP8"/>
+                                </connections>
+                            </button>
+                            <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="kYF-Xx-1oa">
+                                <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                <gestureRecognizers/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="5" minimumInteritemSpacing="5" id="CYO-NB-zLS">
+                                    <size key="itemSize" width="95" height="67"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="10" minY="10" maxX="10" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Card" id="Qo0-tR-Ube" customClass="SetCardCollectionViewCell">
+                                        <rect key="frame" x="10" y="10" width="95" height="67"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="95" height="67"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k28-9y-xgT" customClass="SetCardView">
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                </view>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="k28-9y-xgT" firstAttribute="top" secondItem="Qo0-tR-Ube" secondAttribute="top" type="default" id="SdJ-aY-arO"/>
+                                            <constraint firstItem="k28-9y-xgT" firstAttribute="trailing" secondItem="Qo0-tR-Ube" secondAttribute="trailing" type="default" id="dMd-j1-HXW"/>
+                                            <constraint firstItem="k28-9y-xgT" firstAttribute="leading" secondItem="Qo0-tR-Ube" secondAttribute="leading" type="default" id="h5R-Sy-JEG"/>
+                                            <constraint firstItem="k28-9y-xgT" firstAttribute="bottom" secondItem="Qo0-tR-Ube" secondAttribute="bottom" type="default" id="hQn-ug-fHn"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="setCardView" destination="k28-9y-xgT" id="B6X-IB-Dgg"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="DfJ-7b-TQ7" id="HjJ-Tg-CzH"/>
+                                    <outletCollection property="gestureRecognizers" destination="8Zy-pw-oot" appends="YES" id="dXm-GK-ZjG"/>
+                                </connections>
+                            </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UDE-3h-5xn">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="76" id="k2u-gW-P1d"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <state key="normal" title="+3 Card">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="dealCards" destination="DfJ-7b-TQ7" eventType="touchUpInside" id="REn-YD-EZl"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="SCORE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WlS-Oh-Nnh">
+                                <fontDescription key="fontDescription" name="Verdana-Bold" family="Verdana" pointSize="10"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view opaque="NO" tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CKf-Cg-YCW" customClass="SetCardView">
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <accessibility key="accessibilityConfiguration" label=""/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="34" type="user" id="6BO-Oe-zHS"/>
+                                </constraints>
+                            </view>
+                            <view opaque="NO" tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sDg-c5-cpG" customClass="SetCardView">
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <accessibility key="accessibilityConfiguration" label=""/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="34" type="user" id="dqY-98-mk2"/>
+                                </constraints>
+                            </view>
+                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MN0-Hc-Y2P" customClass="SetCardView">
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <accessibility key="accessibilityConfiguration" label=""/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="34" type="user" id="Kcu-DS-n7V"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="kYF-Xx-1oa" firstAttribute="top" secondItem="Prv-xA-zIs" secondAttribute="top" type="user" id="2CO-6h-ojl"/>
+                            <constraint firstItem="WlS-Oh-Nnh" firstAttribute="centerX" secondItem="CKf-Cg-YCW" secondAttribute="centerX" type="default" id="2gk-bG-6h2"/>
+                            <constraint firstItem="sDg-c5-cpG" firstAttribute="bottom" secondItem="CKf-Cg-YCW" secondAttribute="bottom" type="user" id="4Jb-Sq-lGT"/>
+                            <constraint firstItem="CKf-Cg-YCW" firstAttribute="leading" secondItem="MN0-Hc-Y2P" secondAttribute="trailing" constant="8" symbolic="YES" type="user" id="4xP-3m-fOx"/>
+                            <constraint firstAttribute="bottom" secondItem="WlS-Oh-Nnh" secondAttribute="bottom" constant="30" type="user" id="6QF-f9-6qB"/>
+                            <constraint firstItem="xGB-Wk-ArX" firstAttribute="bottom" secondItem="UDE-3h-5xn" secondAttribute="bottom" type="default" id="CTh-08-WLF"/>
+                            <constraint firstItem="kYF-Xx-1oa" firstAttribute="trailing" secondItem="Prv-xA-zIs" secondAttribute="trailing" type="user" id="DCc-4T-nDj"/>
+                            <constraint firstItem="UDE-3h-5xn" firstAttribute="leading" secondItem="Prv-xA-zIs" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="LbJ-HG-c6C"/>
+                            <constraint firstItem="nj0-SW-O5G" firstAttribute="baseline" secondItem="UDE-3h-5xn" secondAttribute="baseline" type="default" id="NLs-oE-M1M"/>
+                            <constraint firstItem="MN0-Hc-Y2P" firstAttribute="bottom" secondItem="CKf-Cg-YCW" secondAttribute="bottom" type="user" id="PI9-8a-Int"/>
+                            <constraint firstItem="kYF-Xx-1oa" firstAttribute="leading" secondItem="Prv-xA-zIs" secondAttribute="leading" type="user" id="STQ-oS-CRf"/>
+                            <constraint firstItem="sDg-c5-cpG" firstAttribute="top" secondItem="kYF-Xx-1oa" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="YmY-7h-4UI"/>
+                            <constraint firstAttribute="trailing" secondItem="nj0-SW-O5G" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="bxC-UX-uE4"/>
+                            <constraint firstItem="MN0-Hc-Y2P" firstAttribute="top" secondItem="kYF-Xx-1oa" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="dkl-U1-G7k"/>
+                            <constraint firstAttribute="bottom" secondItem="UDE-3h-5xn" secondAttribute="bottom" constant="10" type="user" id="elA-ht-dMU"/>
+                            <constraint firstItem="nj0-SW-O5G" firstAttribute="baseline" secondItem="xGB-Wk-ArX" secondAttribute="baseline" type="default" id="hiQ-EL-Owb"/>
+                            <constraint firstItem="CKf-Cg-YCW" firstAttribute="centerX" secondItem="kYF-Xx-1oa" secondAttribute="centerX" type="user" id="iek-0c-ESh"/>
+                            <constraint firstItem="xGB-Wk-ArX" firstAttribute="centerX" secondItem="WlS-Oh-Nnh" secondAttribute="centerX" type="default" id="jKu-tK-NMC"/>
+                            <constraint firstAttribute="bottom" secondItem="nj0-SW-O5G" secondAttribute="bottom" constant="10" type="user" id="n2Q-Xi-Cxa"/>
+                            <constraint firstAttribute="bottom" secondItem="kYF-Xx-1oa" secondAttribute="bottom" constant="84" type="user" id="rSu-hg-ZBN"/>
+                            <constraint firstItem="CKf-Cg-YCW" firstAttribute="top" secondItem="kYF-Xx-1oa" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="vrc-Qt-EXY"/>
+                            <constraint firstItem="sDg-c5-cpG" firstAttribute="leading" secondItem="CKf-Cg-YCW" secondAttribute="trailing" constant="8" symbolic="YES" type="user" id="wMG-yc-2Db"/>
+                            <constraint firstItem="WlS-Oh-Nnh" firstAttribute="top" secondItem="CKf-Cg-YCW" secondAttribute="bottom" constant="8" symbolic="YES" type="user" id="zv1-Q5-uMP"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Set" image="tab-2.png" id="ooD-dB-6dO"/>
+                    <connections>
+                        <outlet property="cardCollectionView" destination="kYF-Xx-1oa" id="XMQ-bu-GKK"/>
+                        <outlet property="dealCardsButton" destination="UDE-3h-5xn" id="V5F-vu-egL"/>
+                        <outlet property="scoreLabel" destination="xGB-Wk-ArX" id="rVb-Ks-I8B"/>
+                        <outletCollection property="selectedCardViews" destination="MN0-Hc-Y2P" id="eAF-Ph-ylI"/>
+                        <outletCollection property="selectedCardViews" destination="CKf-Cg-YCW" id="MUp-hq-kg1"/>
+                        <outletCollection property="selectedCardViews" destination="sDg-c5-cpG" id="Ooh-eE-fuK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Kim-Lr-chh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="8Zy-pw-oot">
+                    <connections>
+                        <action selector="flipCard:" destination="DfJ-7b-TQ7" id="Fbn-i6-5E4"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="-92" y="-31"/>
+        </scene>
+        <!--Game Settings View Controller - Settings-->
+        <scene sceneID="Ebo-hh-F66">
+            <objects>
+                <viewController id="tk6-Rl-wEZ" customClass="GameSettingsViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="JNj-D1-EkE">
+                        <rect key="frame" x="0.0" y="20" width="320" height="499"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Settings" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="coI-Xr-Zcg">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="127" id="3GC-8P-rQ7"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="GraphicalSet" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zKQ-o7-Xlp">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="akY-rq-VEp"/>
+                                    <constraint firstAttribute="height" constant="21" id="hv9-VF-qXJ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Copyright © Registered ® PrabhuNatarajan. May Be Some rights reserved" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="300" translatesAutoresizingMaskIntoConstraints="NO" id="neC-An-kRa">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="39" id="pEV-mT-Du2"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qgo-jp-PBJ">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="250" id="W7j-VB-x1t"/>
+                                    <constraint firstAttribute="height" constant="39" id="bRK-Ik-xnP"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="ResetScoreBoard">
+                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="resetScores:" destination="tk6-Rl-wEZ" eventType="touchUpInside" id="N4W-Ki-Hqo"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="zKQ-o7-Xlp" firstAttribute="top" secondItem="JNj-D1-EkE" secondAttribute="top" constant="101" id="28Z-f2-HRP"/>
+                            <constraint firstItem="coI-Xr-Zcg" firstAttribute="top" secondItem="JNj-D1-EkE" secondAttribute="top" constant="29" id="6SI-EJ-n5r"/>
+                            <constraint firstItem="qgo-jp-PBJ" firstAttribute="top" secondItem="coI-Xr-Zcg" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="6hp-J3-BbR"/>
+                            <constraint firstItem="zKQ-o7-Xlp" firstAttribute="trailing" secondItem="neC-An-kRa" secondAttribute="trailing" type="default" id="En9-UP-jhb"/>
+                            <constraint firstItem="qgo-jp-PBJ" firstAttribute="centerX" secondItem="zKQ-o7-Xlp" secondAttribute="centerX" type="default" id="FEB-LH-6Po"/>
+                            <constraint firstItem="neC-An-kRa" firstAttribute="top" secondItem="JNj-D1-EkE" secondAttribute="top" constant="119" id="NfP-09-7JC"/>
+                            <constraint firstItem="coI-Xr-Zcg" firstAttribute="centerX" secondItem="qgo-jp-PBJ" secondAttribute="centerX" type="default" id="OFL-w3-CnK"/>
+                            <constraint firstItem="neC-An-kRa" firstAttribute="leading" secondItem="zKQ-o7-Xlp" secondAttribute="leading" type="default" id="QU8-0F-798"/>
+                            <constraint firstItem="coI-Xr-Zcg" firstAttribute="centerX" secondItem="JNj-D1-EkE" secondAttribute="centerX" type="default" id="nfb-Hx-6og"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Settings" image="tab-4.png" id="Atn-bQ-fhL"/>
+                    <connections>
+                        <outlet property="appNameLabel" destination="zKQ-o7-Xlp" id="g2E-5j-frb"/>
+                        <outlet property="copyrightLabel" destination="neC-An-kRa" id="OfE-Tv-ZQ1"/>
+                        <outlet property="settingsLabel" destination="coI-Xr-Zcg" id="TtY-4K-00p"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mCc-a4-wSk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-92" y="1395"/>
+        </scene>
+        <!--Games Result View Controller - Scoreboard-->
+        <scene sceneID="msj-Zc-jyW">
+            <objects>
+                <viewController id="uVw-D2-DCH" customClass="GamesResultViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="iJk-DT-II7">
+                        <rect key="frame" x="0.0" y="20" width="320" height="499"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="Name 999 points / 9999 sec / Mar 4 2013" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="6ld-ms-686">
+                                <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="412" id="78n-EL-ScW"/>
+                                </constraints>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="ScoreBoard" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DWg-Wa-kj9">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="1wx-kg-5Gd"/>
+                                    <constraint firstAttribute="width" constant="151" id="Jf5-kx-fwg"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Verdana-Bold" family="Verdana" pointSize="20"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="🏁                      🏁" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cfB-QE-tef">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="212" id="Zoj-pR-eip"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Verdana-Bold" family="Verdana" pointSize="20"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="DWg-Wa-kj9" firstAttribute="top" secondItem="iJk-DT-II7" secondAttribute="top" constant="13" id="4GT-su-cfC"/>
+                            <constraint firstItem="6ld-ms-686" firstAttribute="top" secondItem="iJk-DT-II7" secondAttribute="top" constant="41" id="4bF-j7-NiC"/>
+                            <constraint firstItem="cfB-QE-tef" firstAttribute="top" secondItem="DWg-Wa-kj9" secondAttribute="top" type="default" id="4mE-Pc-H1e"/>
+                            <constraint firstItem="DWg-Wa-kj9" firstAttribute="centerX" secondItem="6ld-ms-686" secondAttribute="centerX" type="default" id="FqC-fB-flw"/>
+                            <constraint firstItem="cfB-QE-tef" firstAttribute="baseline" secondItem="DWg-Wa-kj9" secondAttribute="baseline" type="default" id="Tud-wk-R94"/>
+                            <constraint firstItem="cfB-QE-tef" firstAttribute="centerX" secondItem="6ld-ms-686" secondAttribute="centerX" type="default" id="YIb-nQ-cgt"/>
+                            <constraint firstItem="6ld-ms-686" firstAttribute="leading" secondItem="iJk-DT-II7" secondAttribute="leading" type="default" id="k3W-Jj-dXV"/>
+                            <constraint firstItem="6ld-ms-686" firstAttribute="trailing" secondItem="iJk-DT-II7" secondAttribute="trailing" type="default" id="mQQ-Rz-u6g"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Scoreboard" image="tab-3.png" id="PNu-Za-iBx"/>
+                    <connections>
+                        <outlet property="setScoresTextDisplay" destination="6ld-ms-686" id="Aft-Q0-953"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="U9J-k5-vC6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-92" y="685"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="3Os-Fe-n9S">
+            <objects>
+                <tabBarController definesPresentationContext="YES" id="6u5-wQ-7Mh" sceneMemberID="viewController">
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="Lhl-PQ-p5M">
+                        <rect key="frame" x="129" y="330" width="163" height="49"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="2" kind="relationship" relationship="viewControllers" id="GrL-iQ-q2P"/>
+                        <segue destination="DfJ-7b-TQ7" kind="relationship" relationship="viewControllers" id="NCX-U7-XXE"/>
+                        <segue destination="uVw-D2-DCH" kind="relationship" relationship="viewControllers" id="Kct-3R-cU3"/>
+                        <segue destination="tk6-Rl-wEZ" kind="relationship" relationship="viewControllers" id="qYV-nZ-lVV"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4ga-pE-cOv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-742" y="318"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="tab-1.png" width="30" height="30"/>
+        <image name="tab-2.png" width="30" height="30"/>
+        <image name="tab-3.png" width="30" height="30"/>
+        <image name="tab-4.png" width="30" height="30"/>
+    </resources>
+    <classes>
+        <class className="CardGameViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CardGameViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="restartGame"/>
+                <relationship kind="outlet" name="cardCollectionView" candidateClass="UICollectionView"/>
+                <relationship kind="outlet" name="dealCardsButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="messageLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="scoreLabel" candidateClass="UILabel"/>
+                <relationship kind="outletCollection" name="selectedCardViews" candidateClass="UIView"/>
+            </relationships>
+        </class>
+        <class className="CardView" superclassName="UIView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CardView.h"/>
+        </class>
+        <class className="GameSettingsViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/GameSettingsViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="appNameLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="copyrightLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="settingsLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="GamesResultViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/GamesResultViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="setScoresTextDisplay" candidateClass="UITextView"/>
+            </relationships>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="PlayingCardGameViewController" superclassName="CardGameViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PlayingCardGameViewController.h"/>
+        </class>
+        <class className="PlayingCardView" superclassName="CardView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PlayingCardView.h"/>
+        </class>
+        <class className="PlayingCardsCollectionViewCell" superclassName="UICollectionViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PlayingCardsCollectionViewCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="playingCardView" candidateClass="PlayingCardView"/>
+            </relationships>
+        </class>
+        <class className="SetCardCollectionViewCell" superclassName="UICollectionViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SetCardCollectionViewCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="setCardView" candidateClass="SetCardView"/>
+            </relationships>
+        </class>
+        <class className="SetCardGameViewController" superclassName="CardGameViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SetCardGameViewController.h"/>
+        </class>
+        <class className="SetCardView" superclassName="CardView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SetCardView.h"/>
+        </class>
+        <class className="UICollectionReusableView" superclassName="UIView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionReusableView.h"/>
+        </class>
+        <class className="UICollectionViewCell" superclassName="UICollectionReusableView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewCell.h"/>
+        </class>
+        <class className="UICollectionViewFlowLayout" superclassName="UICollectionViewLayout">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewFlowLayout.h"/>
+        </class>
+    </classes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>
